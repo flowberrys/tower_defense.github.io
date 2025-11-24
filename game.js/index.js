@@ -7,7 +7,7 @@ canvas.height = 576;
 c.fillRect(0,0,canvas.width,canvas.height)
 
 class Sprite {
-    constructor ({position,velocity,health,attack,movalbilty_for_placement_towers}) {
+    constructor ({position,velocity,health,attack,movalbilty_for_placement_towers,cost}) {
         this.position = position
         this.velocity = velocity
         this.width = 50;
@@ -17,7 +17,11 @@ class Sprite {
         this.health = this.health;
         this.attack = this.attack;
         this.movalbilty = false;
+        movalbilty_for_placement_towers = false;
+        this.cost = this.cost
+
         this.movalbilty_for_placement_towers = false;
+ b57be0205826b3e97d40fef4bf16b4e1cdb8c5c2
         
         
 
@@ -102,10 +106,12 @@ addEventListener(MouseEvent('mouse_down'))
 
 addEventListener(MouseEvent('mouse_up'))
 
-MouseEvent('mouse_up') = true;
+<head>
+MouseEvent('mouse_up') === true;
 
 if(MouseEvent('mouse_down').x <= 70 & MouseEvent('mouse_down').y >= 506){
     MouseEvent('mouse_up') = false
+
 }
 
 if(MouseEvent('mouse_up') === true) {
