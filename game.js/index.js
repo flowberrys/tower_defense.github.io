@@ -76,7 +76,8 @@ const hard_enemy = new Sprite({
     color: 'red'
     
 })
-const basic_btn = document.getElementById()
+const basic_btn = document.getElementById(basic_btn)
+
 
 const basic_tower = new Sprite({
 position: {
@@ -96,7 +97,9 @@ attack: 5,
 
 addEventListener(MouseEvent('click'))
 
+addEventListener(MouseEvent('mouse_down'))
 
+if(MouseEvent('mouse_down').x <= 70 & MouseEvent('mouse_down').y >= 506){
 
 
 draw.basic_tower = {
@@ -106,7 +109,7 @@ draw.basic_tower = {
     }
 }
 
-
+}
 
 function animate() {
     draw()
