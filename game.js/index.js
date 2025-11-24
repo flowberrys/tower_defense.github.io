@@ -17,7 +17,7 @@ class Sprite {
         this.health = this.health;
         this.attack = this.attack;
         this.movalbilty = false;
-        movalbilty_for_placement_towers = false;
+        this.movalbilty_for_placement_towers = false;
         
         
 
@@ -92,6 +92,7 @@ health: 200,
 
 attack: 5,
 
+movalbilty_for_placement_towers: false
 
 })
 
@@ -99,17 +100,20 @@ addEventListener(MouseEvent('click'))
 
 addEventListener(MouseEvent('mouse_down'))
 
+addEventListener(MouseEvent('mouse_up'))
+
+MouseEvent('mouse_up') = true;
+
 if(MouseEvent('mouse_down').x <= 70 & MouseEvent('mouse_down').y >= 506){
-
-
-draw.basic_tower = {
-    draw:{
-        x: MouseEvent.position.x,
-        y: MouseEvent.position.y
-    }
+    MouseEvent('mouse_up') = false
 }
 
+if(MouseEvent('mouse_up') === true) {
+    basic_tower.movalbilty_for_placement_towers = false;
 }
+
+
+
 
 function animate() {
     draw()
