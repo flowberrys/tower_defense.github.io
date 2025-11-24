@@ -7,7 +7,7 @@ canvas.height = 576;
 c.fillRect(0,0,canvas.width,canvas.height)
 
 class Sprite {
-    constructor ({position,velocity,health,attack}) {
+    constructor ({position,velocity,health,attack,movalbilty}) {
         this.position = position
         this.velocity = velocity
         this.width = 50;
@@ -16,6 +16,8 @@ class Sprite {
         this.draw = c.fillRect(this.position.x,this.position.y,this.width,this.height);
         this.health = this.health;
         this.attack = this.attack;
+        this.movalbilty_for_placement = false
+        
         
 
     }
@@ -34,7 +36,9 @@ const easy_enemy = new Sprite({
 
     attack: 0,
 
-    color: 'green'
+    color: 'green',
+
+    movalbilty: false
 
     
     
@@ -71,6 +75,7 @@ const hard_enemy = new Sprite({
     color: 'red'
     
 })
+
 
 function animate() {
     draw()
