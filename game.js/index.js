@@ -7,21 +7,20 @@ canvas.height = 576;
 c.fillRect(0,0,canvas.width,canvas.height)
 
 class Sprite {
-    constructor ({position,velocity,health,attack,movalbilty_for_placement_towers,cost}) {
+    constructor ({position,velocity,health,attack,movalbilty_for_placement_towers,cost,attack_radius}) {
         this.position = position
         this.velocity = velocity
         this.width = 50;
         this.height = 50;
         this.color = c.fillStyle(this.color);
-        this.draw = c.fillRect(this.position.x,this.position.y,this.width,this.height);
+        this.attack_radius = this.attack_radius
+        this.draw = (c.fillRect(this.position.x,this.position.y,this.width,this.height), c.fillCircle(this.position.x,this.position.y,this.attack_radius) );
         this.health = this.health;
         this.attack = this.attack;
         this.movalbilty = false;
-        movalbilty_for_placement_towers = false;
         this.cost = this.cost
 
         this.movalbilty_for_placement_towers = false;
- b57be0205826b3e97d40fef4bf16b4e1cdb8c5c2
         
         
 
@@ -96,22 +95,34 @@ health: 200,
 
 attack: 5,
 
-movalbilty_for_placement_towers: false
+movalbilty_for_placement_towers: false,
+
+attack_radius: 10,
 
 })
 
 addEventListener(MouseEvent('click'))
+addEventListener(mouseX)
 
-addEventListener(MouseEvent('mouse_down'))
+if(MouseEvent(mouseX) <= 70 && MouseEvent(mouseY) >= 506 && MouseEvent(click) === true){
+    basic_tower.movalbilty_for_placement_towers = true
+    basic_tower.position.x = MouseEvent(mouseX)
+    basic_tower.position.y = MouseEvent(mouseY)
+    if(basic_tower.position.y <=506){
+        basic_tower.movalbilty_for_placement_towers = false
+        basic_tower.position.x = MouseEvent(mouseX)
+    } else {
+        basic_tower.position.y = MouseEvent(mouseY)
+        basic_tower.position.x = MouseEvent(mouseX)
+    }
 
-addEventListener(MouseEvent('mouse_up'))
+    if(MouseEvent('click') === true){
+        basic_tower.draw(
+        basic_tower.position.x = mouseX,
+        basic_tower.position.y = mouseY
 
-<head>
-MouseEvent('mouse_up') === true;
-
-if(MouseEvent('mouse_down').x <= 70 & MouseEvent('mouse_down').y >= 506){
-    MouseEvent('mouse_up') = false
-
+        )
+    }
 }
 
 if(MouseEvent('mouse_up') === true) {
