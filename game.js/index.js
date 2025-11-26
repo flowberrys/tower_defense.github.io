@@ -2,11 +2,17 @@ const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
 const ctx = canvas.getContext('2d');
 
-canvas.width = 1024;
+canvas.width = 1350;
 canvas.height = 576;
 
 c.fillRect(0,0,canvas.width,canvas.height)
 
+// test for button
+
+if (document.getElementById(basic_btn).click === true) {
+    c.fillStyle = 'red';
+    c.fillRect(0,0,70,100);
+}
 class Sprite {
     constructor ({position,velocity,health,attack,movalbilty_for_placement_towers,cost,attack_radius}) {
         this.position = position
@@ -124,7 +130,7 @@ attack_radius: 50,
 addEventListener(MouseEvent('click'))
 addEventListener(mouseX)
 //basic tower control and placement
-if(MouseEvent(mouseX) <= 69 && MouseEvent(mouseY) >= 506 && MouseEvent(click) === true){
+if(MouseEvent(mouseX) <= 69 && MouseEvent(mouseY) >= 506 && basic_btn.click === true){
     basic_tower.movalbilty_for_placement_towers = true
     basic_tower.position.x = MouseEvent(mouseX)
     basic_tower.position.y = MouseEvent(mouseY)
@@ -136,7 +142,7 @@ if(MouseEvent(mouseX) <= 69 && MouseEvent(mouseY) >= 506 && MouseEvent(click) ==
         basic_tower.position.x = MouseEvent(mouseX)
     }
 
-    if(MouseEvent('click') === true && coins >= 19){
+    if(basic_btn.click === true && coins >= 19){
 
         basic_tower.movalbilty_for_placement_towers === false
         basic_tower.draw(
@@ -152,12 +158,12 @@ if(MouseEvent(mouseX) <= 69 && MouseEvent(mouseY) >= 506 && MouseEvent(click) ==
 }
 
 
-    if(basic_tower.movalbilty_for_placement_towers === false + MouseEvent('click') === true === Sprite.position.x, Sprite.position.y){
+    if(basic_tower.movalbilty_for_placement_towers === false + better_btn.click === true === Sprite.position.x, Sprite.position.y){
         ctx.fillStyle = ' red';
         ctx.fillCircle(mouseX,mousey,50)
     } 
 //better tower control and placment
-if(MouseEvent(mouseX) >= 71 && MouseEvent(mouseY)>= 506 && MouseEvent(click) === true && coins === 90 ){
+if(MouseEvent(mouseX) >= 71 && MouseEvent(mouseY)>= 506 && better_btn.click === true && coins === 90 ){
     coins - 90 
     movalbilty_for_placement_towers === true
     better_tower.position.x = mouseX
